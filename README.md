@@ -6,7 +6,7 @@
 
 Get the party started with Solid! This package allows you to display a super lightweight confetti explsoion on screen. It doesn't use canvas, only CSS animations. It also doesn't ship a particle generator (lol). A pretty grain solution for all your partying needs.
 
-> This library is the Solid port of the amazing [herrethan/react-confetti-explosion](https://github.com/herrethan/react-confetti-explosion#readme) and [https://github.com/PuruVJ/svelte-confetti-explosion](svelte-confetti-explosion) packages. All the logic is from their packages only, optimisation and Solid code are mine 😉
+> This library is the Solid port of the amazing [herrethan/react-confetti-explosion](https://github.com/herrethan/react-confetti-explosion#readme) and [svelte-confetti-explosion](https://github.com/PuruVJ/svelte-confetti-explosion) packages. All the logic is from their packages only, optimisation and Solid code are mine 😉
 
 ## Features
 
@@ -105,8 +105,8 @@ Colors to use for the confetti particles. Pass string array of colors. Can use h
 
 **Example:**
 
-```svelte
-<ConfettiExplosion colors={['var(--yellow)', 'var(--red)', '#2E3191', '#41BBC7']} />
+```tsx
+<ConfettiExplosion colors={["var(--yellow)", "var(--red)", "#2E3191", "#41BBC7"]} />
 ```
 
 ### particlesShape
