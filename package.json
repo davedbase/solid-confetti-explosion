@@ -1,6 +1,6 @@
 {
   "name": "solid-confetti-explosion",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A Solid component for creating confetti explosions.",
   "author": "David Di Biase",
   "repository": {
@@ -38,11 +38,12 @@
     "solid",
     "party"
   ],
-  "dependencies": {
+  "peerDependencies": {
     "solid-js": "^1.4.5",
     "solid-styled-components": "^0.28.4"
   },
   "devDependencies": {
+    "solid-js": "^1.4.5",
     "esbuild-plugin-solid": "^0.4.2",
     "prettier": "^2.5.1",
     "rollup": "^2.70.2",

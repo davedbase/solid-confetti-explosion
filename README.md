@@ -10,7 +10,7 @@ Get the party started with Solid! This package allows you to display a super lig
 
 ## Features
 
-- 🤏 Tiny - Small and efficient.
+- 🤏 Tiny - Small and efficient (2kb).
 - 🐇 Simple - Quite simple to use, and effectively no-config required!
 - 🧙‍♀️ Elegant - Use a Solid component rather than setting things up in `onMount` hook.
 - 🗃️ Highly customizable - Offers tons of options that you can modify to get different behaviors.
