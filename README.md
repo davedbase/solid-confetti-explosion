@@ -10,13 +10,13 @@ Get the party started with Solid! This package allows you to display a super lig
 
 ## Features
 
-- 🤏 Tiny - Less than 2.5KB min+gzip.
+- 🤏 Tiny - Small and efficient.
 - 🐇 Simple - Quite simple to use, and effectively no-config required!
 - 🧙‍♀️ Elegant - Use a Solid component rather than setting things up in `onMount` hook.
 - 🗃️ Highly customizable - Offers tons of options that you can modify to get different behaviors.
 - 🖥️ SSR friendly - Works seamlessly in Solid Start and other Server Side Rendering environments!
 
-[Try it in Solid REPL](https://playground.solidjs.com)
+[Try it in Solid REPL](https://playground.solidjs.com/?hash=-786404954&version=1.4.1)
 
 ## Installing
 
