@@ -1,0 +1,8 @@
+{
+  "*": [
+    {
+      "type": "script",
+      "href": "/entry-server.js"
+    }
+  ]
+}

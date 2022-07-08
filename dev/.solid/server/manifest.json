@@ -1,0 +1,7 @@
+{
+  "src/entry-server.tsx": {
+    "file": "entry-server.js",
+    "src": "src/entry-server.tsx",
+    "isEntry": true
+  }
+}
