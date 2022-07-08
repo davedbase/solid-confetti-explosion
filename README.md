@@ -14,7 +14,7 @@ Get the party started with Solid! This package allows you to display a super lig
 - 🐇 Simple - Quite simple to use, and effectively no-config required!
 - 🧙‍♀️ Elegant - Use a Solid component rather than setting things up in `onMount` hook.
 - 🗃️ Highly customizable - Offers tons of options that you can modify to get different behaviors.
-- 🖥️ SSR friendly - Works seamlessly in Sveltekit and other Server Side Rendering environments!
+- 🖥️ SSR friendly - Works seamlessly in Solid Start and other Server Side Rendering environments!
 
 [Try it in Solid REPL](https://playground.solidjs.com)
 
