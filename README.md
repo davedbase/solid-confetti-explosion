@@ -1,6 +1,6 @@
 # Solid Confetti Explosion
 
-[![size](https://img.shields.io/bundlephobia/minzip/solid-confetti-explosion?style=for-the-badge)](https://bundlephobia.com/package/solid-confetti-explosion)
+[![size](https://img.shields.io/bundlephobia/minzip/solid-confetti-explosion@%5E1.0.3?style=for-the-badge)](https://bundlephobia.com/package/solid-confetti-explosion)
 [![size](https://img.shields.io/npm/v/solid-confetti-explosion?style=for-the-badge)](https://www.npmjs.com/package/solid-confetti-explosion)
 ![npm](https://img.shields.io/npm/dw/solid-confetti-explosion?style=for-the-badge)
 
