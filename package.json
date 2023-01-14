@@ -1,6 +1,6 @@
 {
   "name": "solid-confetti-explosion",
-  "version": "1.1.0",
+  "version": "1.1.5",
   "description": "A Solid component for creating confetti explosions.",
   "author": "David Di Biase",
   "repository": {
@@ -24,7 +24,8 @@
       "browser": "./dist/index/index.module.js",
       "require": "./dist/index/index.common.js",
       "node": "./dist/index/index.common.js"
-    }
+    },
+    "./styles.css": "./dist/index/styles.css"
   },
   "homepage": "https://github.com/davedbase/solid-confetti-explosion#readme",
   "scripts": {
@@ -39,8 +40,7 @@
     "party"
   ],
   "peerDependencies": {
-    "solid-js": "^1.6.9",
-    "solid-styled-components": "^0.28.5"
+    "solid-js": "^1.6.9"
   },
   "devDependencies": {
     "prettier": "^2.8.2",
@@ -48,5 +48,9 @@
     "rollup-preset-solid": "^1.4.0",
     "solid-js": "^1.6.9",
     "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-import-css": "^3.1.0"
   }
 }

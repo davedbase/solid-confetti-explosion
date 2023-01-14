@@ -1,0 +1,44 @@
+@keyframes sce-yaxis {
+  to {
+    transform: translate3d(0, var(--floor-height), 0);
+  }
+}
+@keyframes sce-xaxis {
+  to {
+    transform: translate3d(var(--x-landing-point), 0, 0);
+  }
+}
+@keyframes sce-rotation {
+  to {
+    transform: rotate3d(var(--rotation), 360deg);
+  }
+}
+.sce-container {
+  width: 0px;
+  height: 0px;
+  overflow: visible;
+  color: transparent;
+  position: relative;
+  transform: translate3d(var(--x, 0), var(--y, 0), 0);
+  z-index: 1200;
+}
+.sce-particle {
+  animation: sce-xaxis var(--duration-chaos) forwards cubic-bezier(var(--x1), var(--x2), var(--x3), var(--x4));
+}
+.sce-particle div {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  animation: sce-yaxis var(--duration-chaos) forwards cubic-bezier(var(--y1), var(--y2), var(--y3), var(--y4));
+  width: var(--width);
+  height: var(--height);
+}
+.sce-particle div::before {
+  display: block;
+  height: 100%;
+  width: 100%;
+  content: "";
+  background-color: var(--bgcolor);
+  animation: sce-rotation var(--rotation-duration) infinite linear;
+  border-radius: var(--border-radius);
+}

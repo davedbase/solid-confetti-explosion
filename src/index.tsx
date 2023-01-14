@@ -9,7 +9,8 @@ import {
   createSignal,
   onCleanup
 } from "solid-js";
-import { styled, keyframes } from "solid-styled-components";
+
+import "./styles.css";
 
 type Particle = {
   color: string; // color of particle
@@ -20,6 +21,7 @@ type ParticleShape = "mix" | "circles" | "rectangles";
 interface IConfettiExplosion {
   count?: number;
   colors?: string[];
+  class?: string;
   particleCount?: number;
   particleSize?: number;
   particlesShape?: ParticleShape;
@@ -270,8 +272,10 @@ export const ConfettiExplosion: Component<IConfettiExplosion> = inProps => {
   confettiStyles;
   return (
     <Show when={isVisible() && isValid()}>
-      {" "}
-      <Confetti class="sce-container" style={{ "--floor-height": `${props.stageHeight}px` }}>
+      <div
+        class={`sce-container${props.class ? ` ${props.class}` : ""}`}
+        style={{ "--floor-height": `${props.stageHeight}px` }}
+      >
         <For each={particles()}>
           {particle => (
             <div class="sce-particle" use:confettiStyles={{ ...particle, ...props }}>
@@ -279,53 +283,7 @@ export const ConfettiExplosion: Component<IConfettiExplosion> = inProps => {
             </div>
           )}
         </For>
-      </Confetti>
+      </div>
     </Show>
   );
 };
-const yAxis = keyframes`
-  to {
-    transform: translate3d(0, var(--floor-height), 0);
-  }
-`;
-const xAxis = keyframes`
-  to {
-    transform: translate3d(var(--x-landing-point), 0, 0);
-  }
-`;
-const rotation = keyframes`
-  to {
-    transform: rotate3d(var(--rotation), 360deg);
-  }
-`;
-const Confetti = styled("div")`
-  width: 0;
-  height: 0;
-  overflow: visible;
-  color: transparent;
-  position: relative;
-  transform: translate3d(var(--x, 0), var(--y, 0), 0);
-  z-index: 1200;
-  .sce-particle {
-    animation: ${xAxis} var(--duration-chaos) forwards
-      cubic-bezier(var(--x1), var(--x2), var(--x3), var(--x4));
-    div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      animation: ${yAxis} var(--duration-chaos) forwards
-        cubic-bezier(var(--y1), var(--y2), var(--y3), var(--y4));
-      width: var(--width);
-      height: var(--height);
-      &:before {
-        display: block;
-        height: 100%;
-        width: 100%;
-        content: "";
-        background-color: var(--bgcolor);
-        animation: ${rotation} var(--rotation-duration) infinite linear;
-        border-radius: var(--border-radius);
-      }
-    }
-  }
-`;

@@ -1,5 +1,5 @@
 import { Component } from "solid-js";
-import { A } from "solid-start";
+import { ConfettiExplosion } from "../../../src/index";
 
 const App: Component = () => (
   <div
@@ -13,7 +13,12 @@ const App: Component = () => (
       "align-items": "center"
     }}
   >
-    <A href="/explode">Explode me</A>
+    <ConfettiExplosion
+      class="test"
+      particleSize={20}
+      particlesShape="circles"
+      particleCount={300}
+    />
   </div>
 );
 

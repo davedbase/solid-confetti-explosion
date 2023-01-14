@@ -4,9 +4,9 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var web = require('solid-js/web');
 var solidJs = require('solid-js');
-var solidStyledComponents = require('solid-styled-components');
 
-const _tmpl$ = /*#__PURE__*/web.template(`<div class="sce-particle"><div></div></div>`, 4);
+const _tmpl$ = /*#__PURE__*/web.template(`<div></div>`, 2),
+  _tmpl$2 = /*#__PURE__*/web.template(`<div class="sce-particle"><div></div></div>`, 4);
 const ROTATION_SPEED_MIN = 200; // minimum possible duration of single particle full rotation
 const ROTATION_SPEED_MAX = 800; // maximum possible duration of single particle full rotation
 const CRAZY_PARTICLES_FREQUENCY = 0.1; // 0-1 frequency of crazy curvy unpredictable particles
@@ -165,80 +165,36 @@ const ConfettiExplosion = inProps => {
       return web.memo(() => !!isVisible())() && isValid();
     },
     get children() {
-      return [" ", web.createComponent(Confetti, {
-        "class": "sce-container",
-        get style() {
-          return {
-            "--floor-height": `${props.stageHeight}px`
-          };
+      const _el$ = _tmpl$.cloneNode(true);
+      web.insert(_el$, web.createComponent(solidJs.For, {
+        get each() {
+          return particles();
         },
-        get children() {
-          return web.createComponent(solidJs.For, {
-            get each() {
-              return particles();
-            },
-            children: particle => (() => {
-              const _el$ = _tmpl$.cloneNode(true),
-                _el$2 = _el$.firstChild;
-              web.use(confettiStyles, _el$, () => ({
-                ...particle,
-                ...props
-              }));
-              web.effect(() => _el$2.style.setProperty("--bgcolor", particle.color));
-              return _el$;
-            })()
-          });
-        }
-      })];
+        children: particle => (() => {
+          const _el$2 = _tmpl$2.cloneNode(true),
+            _el$3 = _el$2.firstChild;
+          web.use(confettiStyles, _el$2, () => ({
+            ...particle,
+            ...props
+          }));
+          web.effect(() => _el$3.style.setProperty("--bgcolor", particle.color));
+          return _el$2;
+        })()
+      }));
+      web.effect(_p$ => {
+        const _v$ = `sce-container${props.class ? ` ${props.class}` : ""}`,
+          _v$2 = `${props.stageHeight}px`;
+        _v$ !== _p$._v$ && web.className(_el$, _p$._v$ = _v$);
+        _v$2 !== _p$._v$2 && _el$.style.setProperty("--floor-height", _p$._v$2 = _v$2);
+        return _p$;
+      }, {
+        _v$: undefined,
+        _v$2: undefined
+      });
+      return _el$;
     }
   });
 };
-const yAxis = solidStyledComponents.keyframes`
-  to {
-    transform: translate3d(0, var(--floor-height), 0);
-  }
-`;
-const xAxis = solidStyledComponents.keyframes`
-  to {
-    transform: translate3d(var(--x-landing-point), 0, 0);
-  }
-`;
-const rotation = solidStyledComponents.keyframes`
-  to {
-    transform: rotate3d(var(--rotation), 360deg);
-  }
-`;
-const Confetti = solidStyledComponents.styled("div")`
-  width: 0;
-  height: 0;
-  overflow: visible;
-  color: transparent;
-  position: relative;
-  transform: translate3d(var(--x, 0), var(--y, 0), 0);
-  z-index: 1200;
-  .sce-particle {
-    animation: ${xAxis} var(--duration-chaos) forwards
-      cubic-bezier(var(--x1), var(--x2), var(--x3), var(--x4));
-    div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      animation: ${yAxis} var(--duration-chaos) forwards
-        cubic-bezier(var(--y1), var(--y2), var(--y3), var(--y4));
-      width: var(--width);
-      height: var(--height);
-      &:before {
-        display: block;
-        height: 100%;
-        width: 100%;
-        content: "";
-        background-color: var(--bgcolor);
-        animation: ${rotation} var(--rotation-duration) infinite linear;
-        border-radius: var(--border-radius);
-      }
-    }
-  }
-`;
 
 exports.ConfettiExplosion = ConfettiExplosion;
 //# sourceMappingURL=index.common.js.map

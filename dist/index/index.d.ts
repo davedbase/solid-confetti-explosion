@@ -1,4 +1,5 @@
 import { Component } from "solid-js";
+import "./styles.css";
 type Particle = {
     color: string;
     degree: number;
@@ -7,6 +8,7 @@ type ParticleShape = "mix" | "circles" | "rectangles";
 interface IConfettiExplosion {
     count?: number;
     colors?: string[];
+    class?: string;
     particleCount?: number;
     particleSize?: number;
     particlesShape?: ParticleShape;
