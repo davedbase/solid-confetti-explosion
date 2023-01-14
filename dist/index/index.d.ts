@@ -1,9 +1,9 @@
-import { Component } from 'solid-js';
+import { Component } from "solid-js";
 type Particle = {
     color: string;
     degree: number;
 };
-type ParticleShape = 'mix' | 'circles' | 'rectangles';
+type ParticleShape = "mix" | "circles" | "rectangles";
 interface IConfettiExplosion {
     count?: number;
     colors?: string[];
@@ -16,12 +16,12 @@ interface IConfettiExplosion {
     stageWidth?: number;
     shouldDestroyAfterDone?: boolean;
 }
-declare module 'solid-js' {
+declare module "solid-js" {
     namespace JSX {
         interface Directives {
             confettiStyles: Particle & IConfettiExplosion;
         }
     }
 }
-declare const ConfettiExplosion: Component<IConfettiExplosion>;
-export default ConfettiExplosion;
+export declare const ConfettiExplosion: Component<IConfettiExplosion>;
+export {};

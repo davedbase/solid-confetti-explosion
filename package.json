@@ -1,6 +1,6 @@
 {
   "name": "solid-confetti-explosion",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "A Solid component for creating confetti explosions.",
   "author": "David Di Biase",
   "repository": {
@@ -11,11 +11,9 @@
   "bugs": {
     "url": "https://github.com/davedbase/solid-confetti-explosion/issues"
   },
-  "homepage": "https://github.com/davedbase/solid-confetti-explosion#readme",
-  "scripts": {
-    "format": "prettier -w \"src/**/*.{js,ts,json,css,tsx,jsx}\"",
-    "build": "rollup -c rollup.config.js"
-  },
+  "files": [
+    "dist"
+  ],
   "main": "dist/index/index.common.js",
   "module": "dist/index/index.module.js",
   "types": "dist/index/index.d.ts",
@@ -28,10 +26,12 @@
       "node": "./dist/index/index.common.js"
     }
   },
+  "homepage": "https://github.com/davedbase/solid-confetti-explosion#readme",
+  "scripts": {
+    "format": "prettier -w \"src/**/*.{js,ts,json,css,tsx,jsx}\"",
+    "build": "rollup -c rollup.config.js"
+  },
   "sideEffects": false,
-  "files": [
-    "dist"
-  ],
   "keywords": [
     "confetti",
     "explosion",
@@ -43,7 +43,6 @@
     "solid-styled-components": "^0.28.5"
   },
   "devDependencies": {
-    "esbuild-plugin-solid": "^0.4.2",
     "prettier": "^2.8.2",
     "rollup": "^2.79.1",
     "rollup-preset-solid": "^1.4.0",

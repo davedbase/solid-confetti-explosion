@@ -1,5 +1,5 @@
 import { Component } from "solid-js";
-import ConfettiExplosion from "../../../src/index";
+import { ConfettiExplosion } from "../../../src/index";
 
 const App: Component = () => (
   <div

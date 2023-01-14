@@ -189,6 +189,10 @@ This library functions by creating 2 DOM nodes for every single confetti. By def
 
 Also, after the specified `duration`, all the confetti DOM nodes will be destroyed. This is to free up memory. If you wish to keep them around, set `shouldDestroyAfterDone` to `false`.
 
+## Changelog
+
+- 1.1.0 - Upgraded to latest Solid, switched to named exports and minor cleanup.
+
 ## License
 
 MIT License

@@ -1,1 +1,0 @@
-import{g as t,t as o}from"./entry-client.50023d70.js";const a=o('<main><h1>Page Not Found</h1><p>Visit <a href="https://solidjs.com" target="_blank">solidjs.com</a> to learn how to build Solid apps.</p></main>');function s(){return t(a)}export{s as default};
