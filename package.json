@@ -23,7 +23,8 @@
       "import": "./dist/index/index.module.js",
       "browser": "./dist/index/index.module.js",
       "require": "./dist/index/index.common.js",
-      "node": "./dist/index/index.common.js"
+      "node": "./dist/index/index.common.js",
+      "types": "./dist/index/index.d.ts"
     },
     "./styles.css": "./dist/index/styles.css"
   },
