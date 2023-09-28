@@ -34,7 +34,7 @@ yarn add solid-confetti-explosion
 ## How to use it
 
 ```tsx
-import ConfettiExplosion from 'solid-confetti-explosion';
+import { ConfettiExplosion } from 'solid-confetti-explosion';
 
 const App () => (
   <ConfettiExplosion />
