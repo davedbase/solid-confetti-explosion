@@ -5,8 +5,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var web = require('solid-js/web');
 var solidJs = require('solid-js');
 
-const _tmpl$ = /*#__PURE__*/web.template(`<div></div>`, 2),
-  _tmpl$2 = /*#__PURE__*/web.template(`<div class="sce-particle"><div></div></div>`, 4);
+const _tmpl$ = /*#__PURE__*/web.template(`<div>`),
+  _tmpl$2 = /*#__PURE__*/web.template(`<div class="sce-particle"><div>`);
 const ROTATION_SPEED_MIN = 200; // minimum possible duration of single particle full rotation
 const ROTATION_SPEED_MAX = 800; // maximum possible duration of single particle full rotation
 const CRAZY_PARTICLES_FREQUENCY = 0.1; // 0-1 frequency of crazy curvy unpredictable particles
@@ -165,19 +165,19 @@ const ConfettiExplosion = inProps => {
       return web.memo(() => !!isVisible())() && isValid();
     },
     get children() {
-      const _el$ = _tmpl$.cloneNode(true);
+      const _el$ = _tmpl$();
       web.insert(_el$, web.createComponent(solidJs.For, {
         get each() {
           return particles();
         },
         children: particle => (() => {
-          const _el$2 = _tmpl$2.cloneNode(true),
+          const _el$2 = _tmpl$2(),
             _el$3 = _el$2.firstChild;
           web.use(confettiStyles, _el$2, () => ({
             ...particle,
             ...props
           }));
-          web.effect(() => _el$3.style.setProperty("--bgcolor", particle.color));
+          web.effect(() => particle.color != null ? _el$3.style.setProperty("--bgcolor", particle.color) : _el$3.style.removeProperty("--bgcolor"));
           return _el$2;
         })()
       }));
@@ -185,7 +185,7 @@ const ConfettiExplosion = inProps => {
         const _v$ = `sce-container${props.class ? ` ${props.class}` : ""}`,
           _v$2 = `${props.stageHeight}px`;
         _v$ !== _p$._v$ && web.className(_el$, _p$._v$ = _v$);
-        _v$2 !== _p$._v$2 && _el$.style.setProperty("--floor-height", _p$._v$2 = _v$2);
+        _v$2 !== _p$._v$2 && ((_p$._v$2 = _v$2) != null ? _el$.style.setProperty("--floor-height", _v$2) : _el$.style.removeProperty("--floor-height"));
         return _p$;
       }, {
         _v$: undefined,
