@@ -194,7 +194,7 @@ Also, after the specified `duration`, all the confetti DOM nodes will be destroy
 - 1.1.0 - Upgraded to latest Solid, switched to named exports and minor cleanup.
 - 1.1.5 - Patched SSR issue, removed solid-styled-components, added class property.
 - 1.1.6 - Cleaned up dependency list
-- 1.1.7 - Patched exports (thanks [ryoid](https://www.github.com/ryoid)) and updated docs (thanks [mhyfritz](https://www.github.com/mhyfritz))
+- 1.1.8 - Patched exports (thanks [ryoid](https://www.github.com/ryoid)) and updated docs (thanks [mhyfritz](https://www.github.com/mhyfritz))
 
 ## License
 
