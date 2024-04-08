@@ -81,7 +81,8 @@
     "import": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
-    }
+    },
+    "./styles.css": "./dist/index.css"
   },
   "typesVersions": {},
   "type": "module"

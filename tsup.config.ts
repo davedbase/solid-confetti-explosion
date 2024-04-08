@@ -18,6 +18,7 @@ export default defineConfig(config => {
   if (!watching) {
     const package_fields = preset.generatePackageExports(parsed_data)
     console.log(`\npackage.json: \n${JSON.stringify(package_fields, null, 2)}\n\n`)
+    package_fields.exports["./styles.css"] = "./dist/index.css";
     preset.writePackageJson(package_fields)
   }
   return preset.generateTsupOptions(parsed_data);
