@@ -1,6 +1,6 @@
 {
   "name": "solid-confetti-explosion",
-  "version": "1.1.8",
+  "version": "1.2.0",
   "description": "A Solid component for creating confetti explosions.",
   "author": "David Di Biase",
   "repository": {
@@ -14,24 +14,10 @@
   "files": [
     "dist"
   ],
-  "main": "dist/index/index.common.js",
-  "module": "dist/index/index.module.js",
-  "types": "dist/index/index.d.ts",
-  "exports": {
-    ".": {
-      "solid": "./dist/index/index.jsx",
-      "import": "./dist/index/index.module.js",
-      "browser": "./dist/index/index.module.js",
-      "require": "./dist/index/index.common.js",
-      "node": "./dist/index/index.common.js",
-      "types": "./dist/index/index.d.ts"
-    },
-    "./styles.css": "./dist/index/styles.css"
-  },
   "homepage": "https://github.com/davedbase/solid-confetti-explosion#readme",
   "scripts": {
     "format": "prettier -w \"src/**/*.{js,ts,json,css,tsx,jsx}\"",
-    "build": "rollup -c rollup.config.js"
+    "build": "tsup"
   },
   "sideEffects": false,
   "keywords": [
@@ -41,7 +27,7 @@
     "party"
   ],
   "peerDependencies": {
-    "solid-js": "^1.6.9"
+    "solid-js": "^1.8.16"
   },
   "devDependencies": {
     "prettier": "^2.8.8",
@@ -51,5 +37,52 @@
     "rollup-preset-solid": "^1.4.0",
     "solid-js": "^1.7.12",
     "typescript": "^4.9.5"
-  }
+  },
+  "dependencies": {
+    "tsup": "^8.0.2",
+    "tsup-preset-solid": "^2.2.0"
+  },
+  "main": "./dist/server.js",
+  "module": "./dist/server.js",
+  "types": "./dist/index.d.ts",
+  "browser": {
+    "./dist/server.js": "./dist/index.js"
+  },
+  "exports": {
+    "worker": {
+      "solid": "./dist/server.jsx",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/server.js"
+      }
+    },
+    "browser": {
+      "solid": "./dist/index.jsx",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "deno": {
+      "solid": "./dist/server.jsx",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/server.js"
+      }
+    },
+    "node": {
+      "solid": "./dist/server.jsx",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/server.js"
+      }
+    },
+    "solid": "./dist/index.jsx",
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "typesVersions": {},
+  "type": "module"
 }
