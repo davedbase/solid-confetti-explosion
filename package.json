@@ -1,6 +1,6 @@
 {
   "name": "solid-confetti-explosion",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A Solid component for creating confetti explosions.",
   "author": "David Di Biase",
   "repository": {
@@ -44,6 +44,7 @@
   },
   "main": "./dist/server.js",
   "module": "./dist/server.js",
+  "style": "./dist/index.css",
   "types": "./dist/index.d.ts",
   "browser": {
     "./dist/server.js": "./dist/index.js"
@@ -81,8 +82,7 @@
     "import": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
-    },
-    "styles.css": "./dist/index.css"
+    }
   },
   "typesVersions": {},
   "type": "module"
