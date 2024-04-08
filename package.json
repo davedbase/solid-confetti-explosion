@@ -42,9 +42,11 @@
     "tsup": "^8.0.2",
     "tsup-preset-solid": "^2.2.0"
   },
+  "typesVersions": {},
+  "type": "module",
+  "style": "./dist/index.css",
   "main": "./dist/server.js",
   "module": "./dist/server.js",
-  "style": "./dist/index.css",
   "types": "./dist/index.d.ts",
   "browser": {
     "./dist/server.js": "./dist/index.js"
@@ -83,7 +85,5 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     }
-  },
-  "typesVersions": {},
-  "type": "module"
+  }
 }
